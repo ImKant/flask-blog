@@ -22,6 +22,7 @@ md.register_extension(QuoteExtension)
 md.register_extension(MultilineCodeExtension)
 app.config.from_object('config')
 
+app.root_path = os.path.abspath(os.path.dirname(__file__))
 
 @app.route('/', defaults={'page': 1})
 @app.route('/page-<int:page>')
